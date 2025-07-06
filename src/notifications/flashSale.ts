@@ -9,7 +9,7 @@ cron.schedule("*/30 * * * * *", async () => {
         type: 'promo'
     };
     
-    const res = await axios.post(`${process.env.API_URL}/api/notification/send`, JSON.stringify(notificationObj), {
+    await axios.post(`${process.env.API_URL}/api/notification/send`, JSON.stringify(notificationObj), {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.CRON_SECRET}`

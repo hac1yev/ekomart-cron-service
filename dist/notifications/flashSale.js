@@ -21,7 +21,7 @@ node_cron_1.default.schedule("*/30 * * * * *", () => __awaiter(void 0, void 0, v
             description: 'Save up to 50% for 2 hours only!',
             type: 'promo'
         };
-        const res = yield axios_1.default.post(`${process.env.API_URL}/api/notification/send`, JSON.stringify(notificationObj), {
+        yield axios_1.default.post(`${process.env.API_URL}/api/notification/send`, JSON.stringify(notificationObj), {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${process.env.CRON_SECRET}`
